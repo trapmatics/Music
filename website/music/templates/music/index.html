@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% if all_albums %}
 
-</body>
-</html>
+    <ul>
+        {% for album in all_albums %}
+        <li><a href ="/music/{{ album.id}}/">{{ album.album_title}}</a></li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+    <h3>You dont have any albums</h3>
+{% endif %}
